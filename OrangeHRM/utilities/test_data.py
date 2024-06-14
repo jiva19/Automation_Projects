@@ -4,4 +4,4 @@ class Test_Data:
     username=  "Admin"
     password=  'V@W09WhqjP'
 
-    document=  r'C:\Users\jivas\Downloads\cisco.PNG'
+    document=  r'C:\Users\jivas\source\repos\OrangeHRM\utilities\cisco.PNG'

@@ -9,7 +9,7 @@ class Test_HR_Page(Base_Test):
 
     def test_Add_User_Role(self):
         hrpage=HR_Page(self.driver)
-        banner=hrpage.Add_User_Role(f'JOB{random.randint(1, 200)}')
+        banner=hrpage.Add_User_Role(f'JOB{random.randint(200, 500)}')
 
         assert banner=='Successfully Saved',f'The message was: {banner} but it should be: Successfully Saved'
 

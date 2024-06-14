@@ -11,12 +11,12 @@ class TestMainPage(Base_Test):
             def test_Add_Employee(self):
                 employeepage=Employee_Page(self.driver)
                                                                     #YYYY-MM-DD
-                employeepage.Add_Employee('Carol','Molinas','Tores','2024-01-10')
+                employeepage.Add_Employee('Caro','Molinas','Tores','2024-01-10')
                 employeepage.click(employeepage.Top_Level_Option(0)) 
                 employeepage.wait(15,employeepage.employe_search_bar,0) 
-                names=employeepage.Search_Employee_Name('Carol Molinas Tores')
+                names=employeepage.Search_Employee_Name('Caro Molinas Tores')
                 
-                assert 'Carol Molinas Tores' in names, f'Name Not Found,{names}'
+                assert 'Caro Molinas Tores' in names, f'Name Not Found,{names}'
 
             def test_Add_Document_To_Contact_Details(self):
                 employeepage=Employee_Page(self.driver)

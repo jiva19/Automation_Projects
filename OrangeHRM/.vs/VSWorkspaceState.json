@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\pages",
+    "\\tests",
+    "\\utilities"
   ],
-  "SelectedNode": "\\chromedriver.exe",
+  "SelectedNode": "\\utilities\\test_data.py",
   "PreviewInSolutionExplorer": false
 }

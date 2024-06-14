@@ -82,8 +82,6 @@ class Employee_Page(Main_Page):
         self.click(self.Top_Level_Option(0)) 
         self.wait(15,self.add_employee_button,1)
         self.write_text(self.Employee_Search_Bar(),employee)
-        #self.wait(10,self.drop_employee,1)
-        #self.click(self.Dropdown())
         self.wait(20,self.table_first_name,2,employee)
         self.click(self.Table_Names()[0])
         self.wait(25,self.top_level_option,1)
@@ -94,6 +92,9 @@ class Employee_Page(Main_Page):
         self.write_text(self.Browse_Document_Button(),document)
         self.wait(20,self.save_button,1)
         self.click(self.Save_Button())
+        doc=document[::-1]
+        head, sep, tail = doc.partition("\\") 
+        self.wait(10,self.table_documents,2,head[::-1])
         return [i.text for i in self.Table_Documents()]
     
 
@@ -145,6 +146,9 @@ class Employee_Page(Main_Page):
 
     def Table_Documents(self):
         return self.finds(self.table_documents[0],self.table_documents[1])
+
+    
+
 
    
     
