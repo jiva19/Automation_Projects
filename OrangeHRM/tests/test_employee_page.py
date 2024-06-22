@@ -5,7 +5,6 @@ from tests.base_test import Base_Test
 
 
 
-
 class TestMainPage(Base_Test):
 
             def test_Add_Employee(self):
@@ -24,5 +23,11 @@ class TestMainPage(Base_Test):
                 
                 assert "cisco.PNG" in documents,f'No document found, only these:{documents}'
 
-            
-                
+            def test_Add_Automated_File_To_Contact_Details(self):
+
+                employeepage=Employee_Page(self.driver)
+                path=employeepage.Create_Text_File(Test_Data.name,Test_Data.text_in_file)
+                documents=employeepage.Add_File_To_Contact_Details('Cece Bonaparte',path)
+                 
+                assert Test_Data.name+'.txt' in documents,f'No document found, only these:{documents}, but it should be these{Test_Data.name}'
+               

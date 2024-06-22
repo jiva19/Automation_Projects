@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+ 
 
 
 class Employee_Page(Main_Page):
@@ -89,11 +90,11 @@ class Employee_Page(Main_Page):
         self.wait(20,self.add_contact_document,0)
         self.click(self.Add_Document_Button())
         self.wait(20,self.browse_document,0)
+        doc=document[::-1]
+        head, sep, tail = doc.partition("\\") 
         self.write_text(self.Browse_Document_Button(),document)
         self.wait(20,self.save_button,1)
         self.click(self.Save_Button())
-        doc=document[::-1]
-        head, sep, tail = doc.partition("\\") 
         self.wait(10,self.table_documents,2,head[::-1])
         return [i.text for i in self.Table_Documents()]
     
