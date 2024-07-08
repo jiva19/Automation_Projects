@@ -4,10 +4,10 @@ Feature: Search Multiple Products on OpenCart page.
   
   Background:
     Given launch chrome browser
-    When open opencart login page
+    when open opencart login page
 
   Scenario Outline:Search Products.
-    And search "<Product>"
+    and search "<Product>"
     Then verify we are on the search "<Product>"
     And close browser
     Examples:
@@ -17,10 +17,10 @@ Feature: Search Multiple Products on OpenCart page.
       |Television |
 
   Scenario: Add to Cart.
-   And search Phone product 
+   and search Phone product 
    Then add Phone to cart
-   And verify it indeed was added 
-   And close browser 
+   and verify it indeed was added 
+   and close browser 
 
 
   

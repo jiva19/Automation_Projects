@@ -1,7 +1,8 @@
 import pytest 
 from utilities.test_data import Test_Data
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from pages.login_page import Login_Page 
 import time 
 
@@ -10,11 +11,9 @@ import time
 @pytest.fixture()
 def launchbrowser(request):
 
-    
-
-    service=Service(executable_path="chromedriver.exe")
     global driver
-    driver= webdriver.Chrome(service=service)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    
     if 'function_test' in request.keywords:
         request.cls.driver = driver
         yield 

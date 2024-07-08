@@ -1,17 +1,16 @@
 from behave import given, when, then, step
 import pytest 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-import time 
 from selenium.webdriver.support.ui import WebDriverWait
 
 @given(u'launch chrome browser')
 def step_impl(context):
-   service=Service(executable_path="chromedriver.exe")
-   context.driver= webdriver.Chrome(service=service)
+   context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 
 @when(u'open opencart login page')

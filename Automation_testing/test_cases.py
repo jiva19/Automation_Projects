@@ -2,21 +2,17 @@ import pytest
 import function
 import openpyxl as xls
 from test_data import Test_Data
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
 import time 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(autouse="True")
 def LaunchBrowser():
  global driver
- service=Service(executable_path="chromedriver.exe")
- driver= webdriver.Chrome(service=service)
+ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
  driver.get(Test_Data.url)
  driver.maximize_window()
 
