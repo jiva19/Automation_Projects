@@ -1,43 +1,45 @@
-🐍 Python Automation Suite: Selenium & Pytest
-This repository serves as a comprehensive collection of my earlier automation work, focusing on diverse architectural patterns including Page Object Model (POM), Data-Driven Testing, and Hybrid Frameworks.
+# 🐍 Python Automation Suite: Selenium & Pytest
 
-🏢 Project 1: OrangeHRM (Employee Management)
-Architecture: Page Object Model (POM)
+This repository is a comprehensive collection of my foundational automation work, demonstrating the implementation of three distinct architectural patterns: **Page Object Model (POM)**, **Data-Driven Testing**, and **Hybrid Frameworks**.
 
-Objective: Automated end-to-end HR workflows, including secure login, employee onboarding, document management, and database-style searching.
+---
 
-Technical Deep-Dive:
+## 🏢 Project 1: OrangeHRM (Employee Management)
+**Architecture:** Page Object Model (POM)
 
-Advanced Element Interaction: Managed complex UI components such as dynamic/stable dropdowns, date-picker calendars, multi-select checkboxes, and HTML tables.
+* **Objective:** Automated end-to-end HR workflows, including secure authentication, employee onboarding, document management, and database-style record searching.
+* **Technical Deep-Dive:**
+    * **Advanced UI Interaction:** Managed complex components including dynamic dropdowns, date-picker calendars, multi-select checkboxes, and HTML tables.
+    * **Pytest Mastery:** Utilized `fixtures` for setup/teardown, `markers` for categorization, and `@pytest.mark.parametrize` for data-efficient, reusable test logic.
+    * **OS Interaction:** Integrated **PyAutoGUI** to automate local file system interactions and dynamic text file generation.
+    * **JavaScript Execution:** Employed `JsExecutors` to handle hidden elements and custom scrolling behaviors beyond standard Selenium capabilities.
 
-Pytest Mastery: Leveraged fixtures for setup/teardown, markers for test categorization, and @pytest.mark.parametrize for clean, reusable test logic.
+---
 
-OS Interaction: Integrated PyAutoGUI to automate local file system interactions and text file generation.
+## 🛍️ Project 2: E-Commerce Automation
+**Architecture:** Data-Driven Framework (Excel-to-Test)
 
-Execution: Used JsExecutors to handle hidden elements or scrolling behaviors that standard Selenium clicks couldn't reach.
+* **Objective:** Engineered a robust testing engine for an E-commerce platform where test logic is completely decoupled from test data.
+* **Technical Deep-Dive:**
+    * **Excel Integration:** Developed custom utilities to retrieve credentials and "Expected Results" directly from external spreadsheets.
+    * **Bi-Directional Reporting:** Built a "write-back" feature that automatically updates the source Excel file with **Pass/Fail** status and actual execution results.
+    * **Core Workflows:** Automated critical user paths, including account authentication and multi-parameter product search functionality.
 
-🛍️ Project 2: E-Commerce Automation (Data-Driven)
-Architecture: Data-Driven Framework (Excel-to-Test)
+---
 
-Objective: Built a robust testing engine for an E-commerce platform where the test logic is separated from the test data.
+## 🌐 Project 3: VWO Platform Testing
+**Architecture:** Hybrid-Driven Framework (Functional + Data-Driven)
 
-Technical Deep-Dive:
+* **Objective:** Validated a complex SaaS platform requiring high-level browser manipulation and sophisticated state management.
+* **Technical Deep-Dive:**
+    * **Complex DOM Handling:** Successfully managed interactions within **iFrames** and across multiple browser tabs/windows.
+    * **Hybrid Logic:** Combined functional step-definitions with external data inputs to maintain a flexible and scalable test suite.
+    * **Precision Interaction:** Used JavaScript injection via `JsExecutors` for high-precision interactions within the browser environment.
 
-Excel Integration: Developed a custom utility to retrieve usernames, passwords, and "Expected Results" directly from an Excel spreadsheet.
+---
 
-Automated Reporting: Engineered a "write-back" feature where the script automatically updates the Excel file with the "Pass/Fail" status and actual results after each execution.
-
-Workflows: Covered critical user paths including account authentication and multi-parameter product searching.
-
-🌐 Project 3: VWO Platform Testing
-Architecture: Hybrid-Driven Framework (Functional + Data-Driven)
-
-Objective: Tested a complex SaaS platform requiring high-level browser manipulation and data handling.
-
-Technical Deep-Dive:
-
-Window & Frame Management: Handled complex DOM structures including iFrames and multiple browser tabs/windows.
-
-State Management: Utilized Hybrid-Driven logic to combine functional step-definition testing with external data inputs.
-
-JavaScript Injection: Used JsExecutors for high-precision interactions within the browser environment.
+### 🛠️ Tech Stack
+* **Language:** Python
+* **Libraries:** Selenium WebDriver, Pytest
+* **Data Handling:** OpenPyXL (Excel), CSV, PyAutoGUI
+* **Design Patterns:** POM, Singleton, Data-Driven, Hybrid
